@@ -108,8 +108,10 @@ git remote -v
 git remote add origin https://github.com/你的用户名/新仓库名.git
 # 执行推送代码：
 git push -u origin main
-查看当前的分支：
+# 查看当前的分支：
 git branch
+查看文件修改的不同：
+git diff 文件名
 
 
 
