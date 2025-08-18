@@ -1,0 +1,115 @@
+Git:
+
+官网安装git并配置：
+git --version                                              # 得到版本号即安装成功
+
+git config --global user.name "Your Name"
+git config --global user.email "email@example.com"         # 同GitHub
+
+git config --list                                          # 检查配置
+
+pycharm中设置->版本控制->git测试->显示版本
+
+Alt + F12启动项目内终端
+
+
+
+1. 克隆远程仓库（下载代码）
+
+打开 PyCharm → 左上角克隆仓库
+选择 Git，输入仓库地址（GitHub/Gitee）                          # 用SSH最佳
+选择本地保存路径，最好提前设置一个项目文件夹接收 → Clone
+成功后 PyCharm 会自动打开项目
+
+
+
+2.在项目目录创建本地git仓库
+
+打开当前项目的终端Alt + F12
+输入：git init                                               # 在当前项目目录下创建一个空的 Git 仓库
+
+检测方法：
+# A. 是否在一个工作区？
+git rev-parse --is-inside-work-tree
+# 输出 true 表示这是一个 Git 工作副本；报错就不是。
+# B. 这个仓库的根目录在哪？
+git rev-parse --show-toplevel
+# 会打印仓库“根”的绝对路径（.git 正常就放在这个根下面）。
+# C. 仓库状态（也能顺便看当前分支）
+git status
+# 正常会看到 "On branch main" 之类；若提示 "not a git repository" 就还没初始化。
+
+
+
+3.提交项目
+修改文件后，右下角会显示文件变动（绿色/蓝色标记）。
+绿色标记：一般表示新添加的未被 Git 追踪的文件。新创建的，未通过 git add 命令添加到 Git 的暂存区，Git目前还没有开始对它们进行版本跟踪。
+蓝色标记：通常代表已经被 Git 追踪，但有修改且未添加到暂存区的文件。
+
+git指令提交：
+
+git add .
+# 把当前项目目录下的所有文件添加到 Git 的 “暂存区”（可理解为待提交的准备区域）
+
+git add file1.py file2.txt README.md
+git commit -m "提交指定的几个文件，说明提交的具体原因"
+# 提交多个文件到暂缓区，并写明本次提交的说明信息
+
+git commit -m "xxx"
+# 对暂存区的文件执行提交操作，-m 后面的 "xxx" 是本次提交的说明信息，用于记录这次提交的目的，
+方便之后查看提交历史时能快速理解当时的代码变更情况。这一步会把文件当前的状态，永久保存到 Git 仓库的历史记录里。
+
+
+pycharm图形化界面提交：
+Ctrl + K（或者菜单栏 Git → Commit）。
+写提交信息，比如：feat: 初始化项目。
+选中要提交的文件 → Commit（仅提交到本地仓库） 或 Commit and Push（直接推到远程）
+
+
+
+4. 推送到远程仓库
+如果是第一次推送：
+Git → Manage Remotes → 添加远程仓库地址（GitHub/Gitee 的 HTTPS/SSH 地址）。
+然后 Ctrl + Shift + K（Push）
+推送成功后，GitHub/Gitee 上就能看到代码了。
+git remote add origin <远程仓库地址>
+git push -u origin main
+
+
+
+5. 拉取更新
+Ctrl + T
+
+6.配置git全局忽略文件
+
+# 创建全局忽略文件
+Git Bash中：
+touch 路径/global_gitignore
+git config --global core.excludesfile ~/.gitignore_global
+git config --global core.excludesfile
+# 配置全局忽略文件，填入路径
+# 告诉gitbash全局文件是哪个
+# 检查配置是否成功
+在文件中写入要忽略的文件
+
+# 单独项目的忽略文件配置
+在项目根目录创建.gitignore文件
+写入需要忽略的文件即可
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+Conda：
+
+在anaconda prompt中运行
+
+##### 环境类
+
+创建/删除环境：
+conda create --name 环境名 python=版本号
+# 例如：conda create --name myenv python=3.9
+conda env remove --name 旧环境名
+
+激活/退出环境：
+conda activate 环境名
+conda deactivate
+
+查看所有环境：
+conda env list
+
+复制环境：
+conda create --name 新环境名 --clone 被复制的环境名
+
+
+
+##### 包类
+
+安装包：
+conda install 包名                 # 在当前环境安装
+conda install --name 环境名 包名    # 在指定环境安装
+conda install 包名=版本号           # 安装指定版本，例如：conda install numpy=1.21.0
+conda install -c 渠道名 包名        # 指定渠道安装包，例如：conda install -c conda-forge pandas
+
+查看已安装的包：
+conda list                       # 查看当前环境的包
+conda list --name 环境名          # 查看指定环境的包
+
+更新/卸载包：
+conda update 包名                 # 更新指定包
+conda update --all               # 更新当前环境所有包
+conda remove 包名                 # 在当前环境卸载
+conda remove --name 环境名 包名    # 在指定环境卸载
+
+在当前配置的渠道中搜索指定包：
+conda search 包名
+conda search 包名=版本号
+conda search -c 渠道名 包名        # 指定渠道
+
+当前环境是否安装某个包：
+conda list 包名
+
+
+##### conda本身
+
+更新 Conda：
+conda update conda
+
+检查 Conda 版本：
+conda --version
+
+清理缓存：
+conda clean --all  # 清理所有缓存文件
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
