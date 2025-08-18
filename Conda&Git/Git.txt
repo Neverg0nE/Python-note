@@ -98,11 +98,18 @@ git config --global core.excludesfile
 
 
 其他：
+# 把 Git 已经跟踪的、但应该被忽略的文件移出索引：
 git rm -r --cached .
-# 把 Git 已经跟踪的、但应该被忽略的文件移出索引
-
-
-
+# 清除这个旧的远程仓库链接：
+git remote remove origin
+查看当前项目中设置的远程仓库：（如果输出为空，说明没有设置远程仓库。）
+git remote -v
+# 添加新远程仓库：
+git remote add origin https://github.com/你的用户名/新仓库名.git
+# 执行推送代码：
+git push -u origin main
+查看当前的分支：
+git branch
 
 
 
