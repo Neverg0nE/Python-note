@@ -97,7 +97,9 @@ git config --global core.excludesfile
 写入需要忽略的文件即可
 
 
-
+其他：
+git rm -r --cached .
+# 把 Git 已经跟踪的、但应该被忽略的文件移出索引
 
 
 
